@@ -12,9 +12,13 @@ public class CuentaCorriente extends Cuenta{
 	//ES UN EJEMPLO DE POLIMORFISMO.
 	
 	@Override
-	public boolean retirar(double valor){
+	public void retirar(double valor){
 		double comisionPorTransferencia = valor + 0.5;
-		return super.retirar(comisionPorTransferencia);
+		try {
+			super.retirar(comisionPorTransferencia);
+		} catch (SaldoInsuficienteException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

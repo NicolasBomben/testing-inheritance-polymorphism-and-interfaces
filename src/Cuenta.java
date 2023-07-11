@@ -22,20 +22,21 @@ public abstract class Cuenta {
 	}
 	
 	
-	//metodo void   recibe el valor que va a ser el saldo.
+	
 	public abstract void depositar( double valor);
 
 	
 	//metodo retirar
-	public boolean retirar(double valor) {
-		if(this.saldo >= valor) {
-			this.saldo = this.saldo - valor;
-			return true;
-		}else {
-			return false;
+	public void retirar(double valor) throws SaldoInsuficienteException{
+		if(this.saldo < valor){
+			//exception
+			throw new SaldoInsuficienteException("No tienes saldo");
 		}
+		this.saldo -= valor;
 	}
-	//metodo transferir 					aca usamos el objeto tipo cuenta
+
+
+	
 	 public boolean transferir(double valor, Cuenta cuenta) {
 		 if(this.saldo >= valor) {
 			 this.saldo = this.saldo - valor;
