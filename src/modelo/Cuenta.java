@@ -78,4 +78,24 @@ public abstract class Cuenta {
 		 return total;
 	 }
 
+	 private int getNumero() {
+		return 0;
+	 }
+	
+	 /* es una forma de hacerlo.
+	 public boolean esIgual(Cuenta cuenta){
+		return this.agencia == cuenta.getAgencia() && this.numero == cuenta.getNumero();}
+	  */
+	
+	
+	//otra forma con equals y casteando. es para saber si lo que viene es igual a lo que existe.Para comprar.
+	@Override
+	public boolean equals(Object obj){
+		Cuenta cuenta = (Cuenta) obj;
+		return this.agencia == cuenta.getAgencia() && this.numero == cuenta.getNumero();
+	}	
 }
+
+
+
+	
