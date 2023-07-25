@@ -5,13 +5,10 @@ public abstract class Cuenta {
 	private int agencia;
 	private int numero;
 	protected double saldo;
-	private Cliente titular; // aca estoy referenciando el objeto cliente que es parte del objeto cuenta...
-	//static nos dice que esta variable no va a ser de la instancia. Va a ser de la clase.
+	private Cliente titular; 
 	private static int total = 0;
 	
-
-	//constructor obliga a informar parametros. aca ninguna cuenta no va ser creada hasta que no se le de informacion.
-	//en esto ya no necesito el metodo setAgencia(); Ej: si necesitara por regla de negocio crear una nueva cuenta.
+	
 	public Cuenta(int agencia, int numero){
 		if(agencia <= 0){
 			System.out.println("No se permite 0");
